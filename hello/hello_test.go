@@ -7,7 +7,7 @@ func TestHello(t *testing.T){
     assertCorrectMessage := func(t *testing.T, got, want string) {
         t.Helper()
         if got != want{
-            t.Error("got '%s' want '%s'", got, want)
+            t.Errorf("got '%s' want '%s'", got, want)
         }
     
     }
@@ -17,7 +17,7 @@ func TestHello(t *testing.T){
         assertCorrectMessage(t, got, want)
     })
 
-    T.Run("empty string defaults to 'Wold'", func(t *testing.T){
+    t.Run("empty string defaults to 'Wold'", func(t *testing.T){
         got := Hello("")
         want := "Hello, World"
         assertCorrectMessage(t,got,want)
